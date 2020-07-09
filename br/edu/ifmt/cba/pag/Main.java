@@ -180,16 +180,8 @@ public class Main {
         System.out.println("==== 1 = Nome                     ====");
         System.out.println("==== 2 = CPF                      ====");
         System.out.println("==== 3 = Identificação            ====");
-        System.out.println("==== 4 = Salario                  ====");
-       
-        if(funcionario[i].getTipoFuncionario() == "Funcionario Horista" ){
-            System.out.println("==== 5 = Valor de hora            ====");
-            System.out.println("==== 6 = Quantidade de hora       ====");
-        }else{
-            System.out.println("==== 7 = Adicional salario        ====");
-        }
-
-        System.out.println("==== 8 = Voltar                   ====");
+        System.out.println("==== 4 = Salario total            ====");
+        System.out.println("==== 5 = Voltar                   ====");
         System.out.println("======================================");
         int op = Teclado.leInt("Digite a Opção:");
         
@@ -216,40 +208,25 @@ public class Main {
                 System.out.println("Alterado com sucesso!!!");
                 System.out.println(funcionario[i]);
                 menu();
-                
                 break;
+                
             case 4:
-                double salario = Teclado.leDouble("Digite o salario:");
-                funcionario[i].setSalario(salario);
+                if("Funcionario Horista".equals(funcionario[i].getTipoFuncionario())){
+                    double salario = Teclado.leDouble("Digite o salario:");
+                    double valorHora = Teclado.leDouble("Digite o valor da hora: ");
+                    double hora = Teclado.leDouble("Digite a quantidade de hora: ");
+                    funcionario[i] = new FuncionarioHorista(valorHora, hora, funcionario[i].getCpf(), funcionario[i].getNome(), funcionario[i].getIdentificacao(), salario);   
+                }else{
+                    double salario = Teclado.leDouble("Digite o salario:");
+                    double adicionalSalario = Teclado.leDouble("Digite o salario adicional: ");
+                    funcionario[i] = new FuncionarioSupervisor(adicionalSalario, funcionario[i].getCpf(), funcionario[i].getNome(),funcionario[i].getIdentificacao(), salario);
+                }
                 System.out.println("Alterado com sucesso!!!");
                 System.out.println(funcionario[i]);
                 menu();
                 break;
+                        
             case 5:
-                double valorHora = Teclado.leDouble("Digite o valor da hora:");
-                funcionario[i].setValorHora(valorHora);
-                System.out.println("Alterado com sucesso!!!");
-                System.out.println(funcionario[i]);
-                menu();
-                break;
-                
-            case 6:
-                double hora = Teclado.leDouble("Digite a quantidade de hora: ");
-                funcionario[i].setQuantidadeHora(hora);
-                System.out.println("Alterado com sucesso!!!");
-                System.out.println(funcionario[i]);
-                menu();
-                break;
-                
-            case 7:
-                double adicionalSalario = Teclado.leDouble("Digite o salario adicional: ");
-                funcionario[i].setAdicionalSalario(adicionalSalario);
-                System.out.println("Alterado com sucesso!!!");
-                System.out.println(funcionario[i]);
-                menu();
-                break;
-                
-            case 8:
                 menu();
                 break;
             default:

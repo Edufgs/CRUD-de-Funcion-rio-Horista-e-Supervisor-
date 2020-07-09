@@ -7,21 +7,22 @@ package br.edu.ifmt.cba.pag;
 public class FuncionarioHorista extends Funcionario {
     private double valorHora;
     private double quantidadeHora;
+    //private static String tipoFuncionario = "Funcionario Horista";
 
     public FuncionarioHorista(double valorHora, double quantidadeHora, String cpf, String nome, int identificacao, double salario) {
-        super(cpf, nome, identificacao, salario);
-        setTipoFuncionario("Funcionario Horista");
+        super(cpf, nome, identificacao, salario, "Funcionario Horista");
         this.valorHora = valorHora;
         this.quantidadeHora = quantidadeHora;
     }   
     
     public FuncionarioHorista() {
+        super("Funcionario Supervisor");
     }
-
+    
     public double getValorHora() {
         return valorHora;
     }
-    @Override
+  
     public void setValorHora(double valorHora) {
         this.valorHora = valorHora;
     }
@@ -30,7 +31,6 @@ public class FuncionarioHorista extends Funcionario {
         return quantidadeHora;
     }
     
-    @Override
     public void setQuantidadeHora(double quantidadeHora) {
         this.quantidadeHora = quantidadeHora;
     }

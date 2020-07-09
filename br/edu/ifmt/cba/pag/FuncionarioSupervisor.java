@@ -8,20 +8,19 @@ package br.edu.ifmt.cba.pag;
 public class FuncionarioSupervisor extends Funcionario{
     private double adicionalSalario;
 
-    public FuncionarioSupervisor(double adicionalSalario, String cpf, String nome, int identificação, double salario) {
-        super(cpf, nome, identificação, salario);
-        setTipoFuncionario("Funcionario Supervisor");
+    public FuncionarioSupervisor(double adicionalSalario, String cpf, String nome, int identificacao, double salario) {
+        super(cpf, nome, identificacao, salario, "Funcionario Supervisor");
         this.adicionalSalario = adicionalSalario;
     }
     
     public FuncionarioSupervisor() {
-    }
-
+        super("Funcionario Supervisor");
+    }    
+    
     public double getAdicionalSalario() {
         return adicionalSalario;
     }
     
-    @Override
     public void setAdicionalSalario(double adicionalSalario) {
         this.adicionalSalario = adicionalSalario;
     }

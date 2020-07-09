@@ -10,24 +10,22 @@ public class Funcionario {
     private String nome;
     private int identificacao;
     private double salario;
-    private String tipoFuncionario;
+    private final String tipoFuncionario;
 
-    public Funcionario(String cpf, String nome, int identificacao, double salario) {
+    public Funcionario(String cpf, String nome, int identificacao, double salario, String tipoFuncionario) {
         this.cpf = cpf;
         this.nome = nome;
         this.identificacao = identificacao;
         this.salario = salario;
+        this.tipoFuncionario = tipoFuncionario;
     }
 
-    public Funcionario() {
+    public Funcionario(String tipoFuncionario) {
+        this.tipoFuncionario = tipoFuncionario;
     }
 
     public String getTipoFuncionario() {
         return tipoFuncionario;
-    }
-
-    public void setTipoFuncionario(String tipoFuncionario) {
-        this.tipoFuncionario = tipoFuncionario;
     }
     
     public String getCpf() {
@@ -61,16 +59,4 @@ public class Funcionario {
     public void setSalario(double salario) {
         this.salario = salario;
     }   
-
-    public void setValorHora(double valorHora) {
-        
-    }
-    
-    public void setQuantidadeHora(double quantidadeHora) {
-    
-    }
-    
-    public void setAdicionalSalario(double adicionalSalario) {
-        
-    }
 }
