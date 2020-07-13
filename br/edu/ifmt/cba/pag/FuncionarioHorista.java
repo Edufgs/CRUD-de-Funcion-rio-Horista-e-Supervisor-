@@ -16,7 +16,7 @@ public class FuncionarioHorista extends Funcionario {
     }   
     
     public FuncionarioHorista() {
-        super("Funcionario Supervisor");
+        super("Funcionario Horista");
     }
     
     public double getValorHora() {
