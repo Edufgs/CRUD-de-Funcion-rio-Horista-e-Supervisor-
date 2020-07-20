@@ -211,15 +211,71 @@ public class Main {
                 break;
                 
             case 4:
-                if("Funcionario Horista".equals(funcionario[i].getTipoFuncionario())){
-                    double salario = Teclado.leDouble("Digite o salario:");
-                    double valorHora = Teclado.leDouble("Digite o valor da hora: ");
-                    double hora = Teclado.leDouble("Digite a quantidade de hora: ");
-                    funcionario[i] = new FuncionarioHorista(valorHora, hora, funcionario[i].getCpf(), funcionario[i].getNome(), funcionario[i].getIdentificacao(), salario);   
+                if(funcionario[i] instanceof FuncionarioHorista == true){
+                    FuncionarioHorista aux = (FuncionarioHorista)funcionario[i];
+                    System.out.println("=========== Alterar o que: ===========");
+                    System.out.println("==== 1 = Salario                  ====");
+                    System.out.println("==== 2 = Valor da hora            ====");
+                    System.out.println("==== 3 = Quantidade de horas      ====");
+                    System.out.println("==== 4 = Voltar                   ====");
+                    System.out.println("======================================");
+                    int op1 = Teclado.leInt("Digite a Opção:");
+                    switch(op1){
+                        case 1:
+                            System.out.println("Salario = " + aux.getSalario());
+                            double salario = Teclado.leDouble("Digite o salario:");                            
+                            aux.setSalario(salario);
+                            break;
+                            
+                        case 2:
+                            System.out.println("Valor da hora = " + aux.getValorHora());
+                            double valorHora = Teclado.leDouble("Digite o valor da hora: ");
+                            aux.setValorHora(valorHora);
+                            break;
+                        
+                        case 3:
+                            System.out.println("Quantidade de hora = " + aux.getQuantidadeHora());
+                            double hora = Teclado.leDouble("Digite a quantidade de hora: ");
+                            aux.setQuantidadeHora(hora);
+                            break;
+                            
+                        case 4:
+                            alterar();
+                            break;
+                            
+                        default:
+                            System.out.println("Opção Invalida!!!");
+                            alterar();
+                    }
                 }else{
-                    double salario = Teclado.leDouble("Digite o salario:");
-                    double adicionalSalario = Teclado.leDouble("Digite o salario adicional: ");
-                    funcionario[i] = new FuncionarioSupervisor(adicionalSalario, funcionario[i].getCpf(), funcionario[i].getNome(),funcionario[i].getIdentificacao(), salario);
+                    FuncionarioSupervisor aux = (FuncionarioSupervisor)funcionario[i];
+                    System.out.println("=========== Alterar o que: ===========");
+                    System.out.println("==== 1 = Salario                  ====");
+                    System.out.println("==== 2 = Adicional salario        ====");
+                    System.out.println("==== 3 = Voltar                   ====");
+                    System.out.println("======================================");
+                    int op1 = Teclado.leInt("Digite a Opção:");
+                    switch(op1){
+                        case 1:
+                            System.out.println("Salario = " + aux.getSalario());
+                            double salario = Teclado.leDouble("Digite o salario:");
+                            aux.setSalario(salario);
+                            break;
+                            
+                        case 2:
+                            System.out.println("Valor da hora = " + aux.getAdicionalSalario());
+                            double adicionalSalario = Teclado.leDouble("Digite o salario adicional: ");                           
+                            aux.setAdicionalSalario(adicionalSalario);
+                            break;
+                        
+                        case 3:
+                            alterar();
+                            break;
+                            
+                        default:
+                            System.out.println("Opção Invalida!!!");
+                            alterar();
+                    }
                 }
                 System.out.println("Alterado com sucesso!!!");
                 System.out.println(funcionario[i]);

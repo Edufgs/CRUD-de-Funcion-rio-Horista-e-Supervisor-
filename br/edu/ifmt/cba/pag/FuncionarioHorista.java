@@ -10,13 +10,12 @@ public class FuncionarioHorista extends Funcionario {
     //private static String tipoFuncionario = "Funcionario Horista";
 
     public FuncionarioHorista(double valorHora, double quantidadeHora, String cpf, String nome, int identificacao, double salario) {
-        super(cpf, nome, identificacao, salario, "Funcionario Horista");
+        super(cpf, nome, identificacao, salario);
         this.valorHora = valorHora;
         this.quantidadeHora = quantidadeHora;
     }   
     
-    public FuncionarioHorista() {
-        super("Funcionario Horista");
+    public FuncionarioHorista(){
     }
     
     public double getValorHora() {

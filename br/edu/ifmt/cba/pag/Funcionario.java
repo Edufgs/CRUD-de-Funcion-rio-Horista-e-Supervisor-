@@ -10,22 +10,15 @@ public class Funcionario {
     private String nome;
     private int identificacao;
     private double salario;
-    private final String tipoFuncionario;
 
-    public Funcionario(String cpf, String nome, int identificacao, double salario, String tipoFuncionario) {
+    public Funcionario(String cpf, String nome, int identificacao, double salario) {
         this.cpf = cpf;
         this.nome = nome;
         this.identificacao = identificacao;
         this.salario = salario;
-        this.tipoFuncionario = tipoFuncionario;
     }
 
-    public Funcionario(String tipoFuncionario) {
-        this.tipoFuncionario = tipoFuncionario;
-    }
-
-    public String getTipoFuncionario() {
-        return tipoFuncionario;
+    public Funcionario() {
     }
     
     public String getCpf() {

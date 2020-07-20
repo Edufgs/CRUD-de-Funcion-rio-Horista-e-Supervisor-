@@ -9,12 +9,12 @@ public class FuncionarioSupervisor extends Funcionario{
     private double adicionalSalario;
 
     public FuncionarioSupervisor(double adicionalSalario, String cpf, String nome, int identificacao, double salario) {
-        super(cpf, nome, identificacao, salario, "Funcionario Supervisor");
+        super(cpf, nome, identificacao, salario);
         this.adicionalSalario = adicionalSalario;
     }
     
     public FuncionarioSupervisor() {
-        super("Funcionario Supervisor");
+  
     }    
     
     public double getAdicionalSalario() {
